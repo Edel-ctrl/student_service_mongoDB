@@ -1,13 +1,12 @@
-package telran.java57.controller;
+package telran.java57.hw_student_service_mongodb.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import telran.java57.dto.NewStudentDto;
-import telran.java57.dto.ScoreDto;
-import telran.java57.dto.StudentDto;
-import telran.java57.dto.StudentUpdateDto;
-import telran.java57.service.StudentService;
+import telran.java57.hw_student_service_mongodb.dto.NewStudentDto;
+import telran.java57.hw_student_service_mongodb.dto.ScoreDto;
+import telran.java57.hw_student_service_mongodb.dto.StudentDto;
+import telran.java57.hw_student_service_mongodb.dto.StudentUpdateDto;
+import telran.java57.hw_student_service_mongodb.service.StudentService;
 
 import java.util.List;
 import java.util.Set;
@@ -34,13 +33,13 @@ public class StudentController {
     }
 
     @PutMapping("/student/{id}")
-    public NewStudentDto updateStudent(@PathVariable int id,@RequestBody StudentUpdateDto studentUpdateDto) {
-        return studentService.updateStudent(id,studentUpdateDto);
+    public NewStudentDto updateStudent(@PathVariable int id, @RequestBody StudentUpdateDto studentUpdateDto) {
+        return studentService.updateStudent(id, studentUpdateDto);
     }
 
     @PutMapping("/score/student/{id}")
-    public boolean addScore(@PathVariable int id,@RequestBody ScoreDto scoreDto) {
-        return studentService.addScore(id,scoreDto);
+    public boolean addScore(@PathVariable int id, @RequestBody ScoreDto scoreDto) {
+        return studentService.addScore(id, scoreDto);
     }
 
     @GetMapping("/students/name/{name}")
@@ -55,6 +54,6 @@ public class StudentController {
 
     @GetMapping("/students/exam/{exam}/minscore/{minScore}")
     public List<StudentDto> getStudentByExamMinScore(@PathVariable String exam, @PathVariable Integer minScore) {
-        return studentService.getStudentByExamMinScore(exam,minScore);
+        return studentService.getStudentByExamMinScore(exam, minScore);
     }
 }
