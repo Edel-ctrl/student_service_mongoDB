@@ -1,6 +1,9 @@
-package telran.java57.dto;
+package telran.java57.hw_student_service_mongodb.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Getter
 @NoArgsConstructor

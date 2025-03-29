@@ -1,4 +1,4 @@
-package telran.java57.model;
+package telran.java57.hw_student_service_mongodb.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +15,7 @@ public class Student {
     String name;
     @Setter
     String password;
-    Map<String,Integer> scores = new HashMap<>();
+    Map<String, Integer> scores = new HashMap<>();
 
     public Student(int id, String name, String password) {
         this.id = id;
@@ -23,7 +23,7 @@ public class Student {
         this.password = password;
     }
 
-    public boolean addScore(String exam, int score){
-        return scores.put(exam,score) == null;
+    public boolean addScore(String exam, int score) {
+        return scores.put(exam, score) == null;
     }
 }
